@@ -85,51 +85,53 @@ For each aspect:
 ## Question Generation Flow
 
 ```mermaid
-graph TD
+flowchart TD
     A[Previous Response] --> B[Extract Key Themes]
     A --> C[Extract Key Topics]
-    B --> D{Theme Analysis}
-    C --> E{Topic Analysis}
+    B --> D[Theme Analysis]
+    C --> E[Topic Analysis]
     
-    D --> F[Dominant Themes<br/>score > 0.3]
-    D --> G[All Themes]
+    D --> |Score > 0.3| F[Dominant Themes]
+    D --> |All| G[Fallback Themes]
     
-    E --> H[Key Topics<br/>length > 4]
-    E --> I[Default Topics]
+    E --> |Length > 4| H[Key Topics]
+    E --> |Default| I[Fallback Topics]
     
-    F --> J{Select Theme}
+    F --> J[Theme Selection]
     G --> J
     
-    H --> K{Select Topic}
+    H --> K[Topic Selection]
     I --> K
     
-    J --> L[Get Theme-Based<br/>Question Templates]
-    K --> M[Format Question<br/>with Selected Topic]
+    J --> L[Theme Templates]
+    K --> M[Topic Formatting]
     
-    L --> N[Generate Final Question]
+    L --> N[Final Question]
     M --> N
     
-    O[Response Quality<br/>Analysis] --> P{Needs Probing?}
-    P -- Yes --> Q[Generate Probe<br/>Question]
-    P -- No --> N
+    O[Response Analysis] --> P{Needs Probing?}
+    P -->|Yes| Q[Probe Question]
+    P -->|No| N
     
-    R[Current Metric] --> S{Check Question<br/>Count}
-    S -- Count >= 5 --> T[Switch to<br/>Next Metric]
-    S -- Count < 5 --> N
+    R[Current Metric] --> S{Question Count}
+    S -->|>= 5| T[Next Metric]
+    S -->|< 5| N
     
-    subgraph Theme Categories
-        TC1[Customer Service]
-        TC2[Operations]
-        TC3[Team Management]
-        TC4[Performance]
-        TC5[Communication]
+    subgraph Themes
+        direction LR
+        T1[Customer Service]
+        T2[Operations]
+        T3[Team Management]
+        T4[Performance]
+        T5[Communication]
     end
     
-    subgraph Probe Areas
-        PA1[Examples]
-        PA2[Metrics]
-        PA3[Implementation]
-        PA4[Challenges]
+    subgraph Probes
+        direction LR
+        P1[Examples]
+        P2[Metrics]
+        P3[Implementation]
+        P4[Challenges]
     end
 ```
 
