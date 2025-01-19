@@ -9,6 +9,7 @@ class LLMHandler:
         self.metrics = metrics
         self.conversation_history = []
         self.current_metric = None
+        self.questions_per_metric = 5
         self.question_count = 0
         self.asked_topics = set()
         self.current_focus = None
@@ -171,7 +172,7 @@ Format: Generate only the question."""
 
     def generate_followup_question(self, previous_response: str) -> Tuple[Optional[str], Optional[str]]:
         """Generate contextual follow-up questions"""
-        if not self.current_metric or self.question_count >= 5:
+        if not self.current_metric or self.question_count >= self.questions_per_metric:
             metrics = list(self.metrics['aspects'].keys())
             current_index = metrics.index(self.current_metric) if self.current_metric else -1
             if current_index + 1 < len(metrics):

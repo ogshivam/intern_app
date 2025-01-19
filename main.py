@@ -18,6 +18,25 @@ class AssessmentCLI:
         self.conversation = ConversationTracker()
         self.responses = []
         self.current_metric = None
+        self.questions_per_metric = 5  # Default value
+        
+    def get_assessment_mode(self) -> int:
+        """Get the assessment mode from user"""
+        while True:
+            print("\nSelect Assessment Mode:")
+            print("1. Quick Assessment (3 questions, 1 per metric)")
+            print("2. Full Assessment (15 questions, 5 per metric)")
+            
+            try:
+                choice = input("\nEnter your choice (1 or 2): ").strip()
+                if choice == "1":
+                    return 1
+                elif choice == "2":
+                    return 5
+                else:
+                    print("Please enter either 1 or 2.")
+            except ValueError:
+                print("Invalid input. Please enter 1 or 2.")
         
     def get_valid_response(self, question: str) -> Optional[str]:
         """Get and validate user response"""
@@ -118,6 +137,14 @@ class AssessmentCLI:
         print("\n\nTime's up! Let's begin the assessment.")
         input("\nPress Enter when you're ready...")
         
+        # Get assessment mode
+        self.questions_per_metric = self.get_assessment_mode()
+        mode_name = "Quick" if self.questions_per_metric == 1 else "Full"
+        total_questions = self.questions_per_metric * 3  # 3 metrics
+        
+        print(f"\nStarting {mode_name} Assessment")
+        print(f"Total questions: {total_questions} ({self.questions_per_metric} per metric)")
+        
         # Initial question about case understanding
         print("\nFirst, let's discuss your understanding of the case.")
         initial_question = self.llm_handler.generate_initial_question()
@@ -130,6 +157,7 @@ class AssessmentCLI:
         self.responses.append(("initial", response))
         
         # Main assessment loop
+        question_count = 0
         while True:
             # Generate follow-up question
             result = self.llm_handler.generate_followup_question(response)
@@ -138,6 +166,10 @@ class AssessmentCLI:
                 
             question, metric = result
             
+            # Check if we've reached the limit for this metric
+            if self.responses.count((metric, None)) >= self.questions_per_metric:
+                continue
+                
             # Print metric header if changing metrics
             if metric != self.current_metric:
                 self.current_metric = metric
@@ -153,6 +185,11 @@ class AssessmentCLI:
             self.responses.append((metric, response))
             evaluation = self.evaluator.evaluate_response(metric, response)
             
+            # Update question count
+            question_count += 1
+            if question_count >= total_questions:
+                break
+            
         # Generate final feedback and scores
         print("\n=== Assessment Complete ===")
         results = self.evaluator.generate_final_feedback(self.responses)
@@ -166,7 +203,7 @@ class AssessmentCLI:
         )
         
         # Save session data
-        session_file = f"assessment_session_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        session_file = f"assessment_session_{mode_name.lower()}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         self.conversation.save_session(results, session_file)
         print(f"\nSession data saved to: {session_file}")
 
