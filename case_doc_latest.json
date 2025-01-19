@@ -1,0 +1,69 @@
+{
+    "title": "Role Play: One-to-One Interaction - Prime Finance",
+    "instructions": [
+        "This is a one-to-one interaction with the assessor. Here, you play the role of a Reporting Manager and the assessor plays the role of your team member.",
+        "Read through the Context given below and prepare for your interaction. You have 20 min to prepare. Post which, the actual interaction shall be for 15 min."
+    ],
+    "context": {
+        "description": "Your company, Prime Finance is a Non-Banking Finance Company (NBFC) working for over two decades, lending to customers, largely in Vehicle Loan, Business Loan and Housing Loan products. The company also undertakes mutual fund distribution and personal loans tailor-made to suit its unique customer set. Prime Finance has always followed the 'Customer First' motto in letter and spirit.",
+        "roles": {
+            "general_manager": {
+                "name": "Rishi Mehta",
+                "responsibility": "You are responsible for day-to-day operations of West Zone and operate from Mumbai office (HQ). You oversee operations of 45 branches in Mumbai Region with a Regional Manager under you."
+            },
+            "regional_manager": {
+                "name": "Amit Sen",
+                "responsibility": "Handles a team of Managers across Mumbai Region who are further responsible for driving operations of 45 branches. Amit joined Prime Finance 3 months back from another leading NBFC."
+            }
+        },
+        "feedback_summary": {
+            "app_usage": "Prime Finance has a Feedback App where customers enter their feedback on service provided at branches. For the past two months, there has been an increase in negative feedback for Mumbai region regarding declining customer service standards.",
+            "notable_complaints": [
+                "Managers and Executives are neither efficient nor friendly. It takes a lot of time to service even simple requests.",
+                "Some Executives are inexperienced and this causes delays in documentation & services.",
+                "There is a long wait to complete the documentation because there isn\u2019t enough staff.",
+                "Prime Finance Executives only pay attention to customers who come for bigger loan requirements.",
+                "There is not enough transparency about extra charges; there are many hidden costs.",
+                "After repeated follow-ups for changing my payment mode to ECS, I lost patience.",
+                "I was pushed to buy an insurance product along with the loan but later found the premium too high, with irrelevant benefits.",
+                "Executives demonstrate no empathy for senior citizens."
+            ],
+            "affected_area": "Most complaints concern branches located in Area 1 - Nerul, Kharghar, Vashi, Belapur, and Panvel. Loan disbursement in this area is consistently decreasing since last quarter, with some old customers shifting to competitors."
+        },
+        "issues_identified": [
+            "Urgent hiring led to onboarding inexperienced staff without proper training or mentoring. This has resulted in poor customer handling, demotivation among staff, and high attrition rates.",
+            "Manager at Area 1 (Prasanna) believes that mistakes are part of learning and prefers throwing people into challenging 'deep water' situations without sufficient preparation."
+        ]
+    },
+    "meeting_objectives": [
+        "Discuss customer concerns with Regional Manager, probe and identify underlying issues.",
+        "Chart out an action plan with Regional Manager to address the issues at hand."
+    ],
+    "assessor_story": {
+        "role": "You are Regional Manager Amit Sen, who joined Prime Finance 3 months back from another leading NBFC. Area 1 (Nerul, Navi Mumbai, Kharghar, Vashi, Panvel) falls under your Area Manager - Prasanna.",
+        "counter_arguments": [
+            "Feedback App data cannot be relied upon; customers are impulsive and give negative feedback to seek attention or settle scores with staff.",
+            "Senior citizens are naturally restless and short-tempered; every customer is in a hurry and has no patience to wait in queues.",
+            "Customers\u2019 angry attitude 'rubs off' on staff. Complaints can\u2019t be right as we have overflowing enquiries for loans/products daily.",
+            "Many customers are uncomfortable with digital payment modes, leading to longer queues.",
+            "'Feedback is just a way for customers to vent out; they still value our services as we are one of the best in the industry.'"
+        ]
+    },
+    "evaluation_criteria": [
+        {
+            "delegation_and_guidance": "Does he delegate or guide effectively? Does he identify ways to develop managers and executives for better customer service?"
+        },
+        {
+            "training_and_coaching": "Does he emphasize training executives to handle customer issues independently? Does he plan effective coaching methods?"
+        },
+        {
+            "analysis_and_recognition": "Does he suggest analyzing customer grievances for patterns? Does he recognize uncooperative employees or reward excellent performers?"
+        },
+        {
+            "solutions_for_issues": "What actions does he suggest for quicker solutions/services or addressing inexperienced staff?"
+        },
+        {
+            "empathy_and_patience": "Does he suggest ways to make all customers feel valued (e.g., special attention to senior citizens)?"
+        }
+    ]
+}

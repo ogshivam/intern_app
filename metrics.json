@@ -1,0 +1,67 @@
+{
+    "competency": "Communicate and Engage",
+    "aspects": {
+        "clear_communication": {
+            "name": "Clear Communication",
+            "description": "Ability to convey messages clearly and effectively",
+            "scoring_levels": {
+                "1.0": "Communication is unclear and ineffective",
+                "2.0": "Communication is somewhat clear but lacks structure",
+                "3.0": "Communication is clear and well-structured",
+                "4.0": "Communication is exceptionally clear, structured, and impactful"
+            },
+            "question_templates": [
+                "How would you address {issue} with your team member?",
+                "What steps would you take to communicate {change} effectively?",
+                "How would you explain {policy} to ensure understanding?",
+                "What approach would you use to deliver feedback about {performance_issue}?",
+                "How would you communicate {urgent_matter} to stakeholders?"
+            ]
+        },
+        "engaging_discussions": {
+            "name": "Engage in Discussions",
+            "description": "Ability to facilitate and participate in meaningful discussions",
+            "scoring_levels": {
+                "1.0": "Minimal engagement in discussions",
+                "2.0": "Basic participation without depth",
+                "3.0": "Active participation with meaningful contributions",
+                "4.0": "Exceptional engagement driving productive discussions"
+            },
+            "question_templates": [
+                "How would you engage your team in discussing {challenge}?",
+                "What strategies would you use to encourage participation in {meeting_type}?",
+                "How would you handle disagreements during discussions about {topic}?",
+                "What approach would you take to ensure all voices are heard when discussing {issue}?",
+                "How would you facilitate a discussion about {sensitive_topic}?"
+            ]
+        },
+        "active_engagement": {
+            "name": "Active Engagement",
+            "description": "Demonstrated interest and proactive participation",
+            "scoring_levels": {
+                "1.0": "Passive and reactive engagement",
+                "2.0": "Occasional proactive engagement",
+                "3.0": "Consistent proactive engagement",
+                "4.0": "Exceptional proactive engagement and leadership"
+            },
+            "question_templates": [
+                "How would you proactively address {customer_concern}?",
+                "What steps would you take to actively improve {process}?",
+                "How would you demonstrate engagement when dealing with {situation}?",
+                "What approach would you use to stay engaged during {challenging_scenario}?",
+                "How would you maintain active engagement while handling {multiple_tasks}?"
+            ]
+        }
+    },
+    "keywords": {
+        "positive": [
+            "clear", "specific", "detailed", "structured", "proactive",
+            "collaborative", "inclusive", "responsive", "attentive",
+            "solution-oriented", "empathetic", "transparent"
+        ],
+        "negative": [
+            "vague", "unclear", "passive", "dismissive", "unresponsive",
+            "defensive", "confrontational", "disorganized"
+        ]
+    }
+}
